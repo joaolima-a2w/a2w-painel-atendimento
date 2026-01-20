@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Layout from './components/Layout'
 import SolicitarSenha from './pages/SolicitarSenha'
 import AcessoRapido from './pages/AcessoRapido';
+import DashboardA2W from './pages/DashboardA2W' 
 import PainelAdmin from './pages/PainelAdmin'
 import GerenciarUsuarios from './pages/GerenciarUsuarios'
 import Agendamentos from './pages/Agendamentos'
@@ -55,8 +56,7 @@ function App() {
           path="/login"
           element={!user ? <Login onLogin={login} /> : <Navigate to="/" />}
         />
-
-
+        
         {/* ROTAS COM SIDEBAR */}
         <Route
           path="/"

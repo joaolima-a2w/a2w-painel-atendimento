@@ -60,7 +60,18 @@ if not exist "node_modules" (
 )
 echo Gerando build...
 call npm run build
-start "A2W Frontend" cmd /k "npm run preview -- --port 3001 --host 0.0.0.0"
+
+REM Instalar serve globalmente se não tiver
+where serve >nul 2>&1
+if errorlevel 1 (
+    echo Instalando 'serve' globalmente...
+    call npm install -g serve
+)
+
+REM Servir build em nova janela
+echo Iniciando servidor frontend...
+start "A2W Frontend" cmd /k "npx serve -c serve.json -p 3000"
+
 cd ..
 
 timeout /t 3 /nobreak >nul
