@@ -1,0 +1,84 @@
+2026-01-02 09:41:31,784 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-02 09:41:52,481 | src.utils.excel_handler | ERROR | Erro ao ler Excel: [Errno 2] No such file or directory: 'data\\bases.xlsx'
+2026-01-02 09:44:18,282 | src.api.main | INFO | 🛑 API encerrada
+2026-01-02 09:44:24,463 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-02 09:44:37,891 | src.utils.excel_handler | ERROR | Erro ao ler Excel: [Errno 2] No such file or directory: 'data\\bases.xlsx'
+2026-01-02 09:45:53,153 | src.api.main | INFO | 🛑 API encerrada
+2026-01-02 09:50:45,762 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-02 09:51:29,458 | src.utils.excel_handler | ERROR | Erro ao ler Excel: [Errno 2] No such file or directory: 'data\\bases.xlsx'
+2026-01-02 09:53:14,600 | src.api.main | INFO | 🛑 API encerrada
+2026-01-02 09:53:39,256 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-02 09:53:55,579 | src.utils.excel_handler | INFO | Lidas 4 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 09:54:35,286 | src.utils.excel_handler | INFO | Lidas 4 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 09:54:53,724 | src.utils.excel_handler | INFO | Lidas 4 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 09:54:55,798 | src.api.routes | INFO | Solicitação recebida: Multigrãos por João Pedro
+2026-01-02 09:54:55,798 | src.automation.password_changer | INFO | Iniciando alteração de senha para: Multigrãos
+2026-01-02 09:54:55,817 | src.utils.excel_handler | INFO | Lidas 4 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 09:54:55,835 | src.automation.password_changer | ERROR | Erro ao alterar senha de Multigrãos: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-01-02 09:54:55,835 | src.api.routes | ERROR | Erro ao processar solicitação: 400: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-01-02 10:32:39,165 | src.api.main | INFO | 🛑 API encerrada
+2026-01-02 10:52:09,943 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-02 10:53:19,824 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 10:53:19,826 | src.api.routes | INFO | 📋 Listadas 5 empresas
+2026-01-02 10:53:33,833 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 10:53:33,834 | src.api.routes | INFO | 📋 Listadas 5 empresas
+2026-01-02 10:53:35,910 | src.api.routes | INFO | 📨 Solicitação recebida: Teste João por João Pedro
+2026-01-02 10:53:36,855 | src.automation.password_changer | INFO | Iniciando alteração de senha para: Teste João
+2026-01-02 10:53:36,872 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 10:53:53,283 | src.automation.browser_automation | INFO | Navegador iniciado
+2026-01-02 10:53:53,283 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-02 10:53:58,754 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-02 10:54:04,747 | src.automation.browser_automation | INFO | Login realizado
+2026-01-02 10:54:05,530 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-02 10:54:05,530 | src.automation.password_changer | ERROR | Erro ao alterar senha de Teste João: AutomacaoSistema.alterar_senha() missing 1 required positional argument: 'senha_nova'
+2026-01-02 10:54:05,531 | src.api.routes | ERROR | ❌ Erro na alteração: AutomacaoSistema.alterar_senha() missing 1 required positional argument: 'senha_nova'
+2026-01-02 11:11:12,449 | src.api.main | INFO | 🛑 API encerrada
+2026-01-02 11:11:17,014 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-02 11:11:34,191 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:11:34,192 | src.api.routes | INFO | 📋 Listadas 5 empresas
+2026-01-02 11:11:53,241 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:11:53,241 | src.api.routes | INFO | 📋 Listadas 5 empresas
+2026-01-02 11:11:55,310 | src.api.routes | INFO | 📨 Solicitação recebida: Teste João por João Pedro
+2026-01-02 11:11:55,493 | src.automation.password_changer | INFO | Iniciando alteração de senha para: Teste João
+2026-01-02 11:11:55,501 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:11:56,899 | src.automation.browser_automation | INFO | Navegador iniciado
+2026-01-02 11:11:56,899 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-02 11:12:02,470 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-02 11:12:08,092 | src.automation.browser_automation | INFO | Login realizado
+2026-01-02 11:12:08,547 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-02 11:12:08,549 | src.automation.password_changer | ERROR | Erro ao alterar senha de Teste João: AutomacaoSistema.alterar_senha() missing 1 required positional argument: 'senha_nova'
+2026-01-02 11:12:08,551 | src.api.routes | ERROR | ❌ Erro na alteração: AutomacaoSistema.alterar_senha() missing 1 required positional argument: 'senha_nova'
+2026-01-02 11:15:55,478 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:15:55,479 | src.api.routes | INFO | 📋 Listadas 5 empresas
+2026-01-02 11:15:57,519 | src.api.routes | INFO | 📨 Solicitação recebida: Teste João por João Pedro
+2026-01-02 11:15:57,520 | src.automation.password_changer | INFO | Iniciando alteração de senha para: Teste João
+2026-01-02 11:15:57,531 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:15:59,134 | src.automation.browser_automation | INFO | Navegador iniciado
+2026-01-02 11:15:59,134 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-02 11:16:01,845 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-02 11:16:06,745 | src.automation.browser_automation | INFO | Login realizado
+2026-01-02 11:16:07,092 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-02 11:16:07,092 | src.automation.password_changer | ERROR | Erro ao alterar senha de Teste João: AutomacaoSistema.alterar_senha() missing 1 required positional argument: 'senha_nova'
+2026-01-02 11:16:07,095 | src.api.routes | ERROR | ❌ Erro na alteração: AutomacaoSistema.alterar_senha() missing 1 required positional argument: 'senha_nova'
+2026-01-02 11:16:19,265 | src.api.main | INFO | 🛑 API encerrada
+2026-01-02 11:16:22,829 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-02 11:16:36,505 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:16:36,506 | src.api.routes | INFO | 📋 Listadas 5 empresas
+2026-01-02 11:16:45,301 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:16:45,301 | src.api.routes | INFO | 📋 Listadas 5 empresas
+2026-01-02 11:16:47,377 | src.api.routes | INFO | 📨 Solicitação recebida: Teste João por João Pedro
+2026-01-02 11:16:47,553 | src.automation.password_changer | INFO | Iniciando alteração de senha para: Teste João
+2026-01-02 11:16:47,566 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:16:48,643 | src.automation.browser_automation | INFO | Navegador iniciado
+2026-01-02 11:16:48,644 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-02 11:16:51,510 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-02 11:16:57,277 | src.automation.browser_automation | INFO | Login realizado
+2026-01-02 11:16:57,277 | src.automation.browser_automation | INFO | Alterando senha...
+2026-01-02 11:17:02,452 | src.utils.excel_handler | INFO | Lidas 5 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-02 11:17:02,587 | src.utils.excel_handler | INFO | Senha atualizada para empresa: Teste João
+2026-01-02 11:17:02,830 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-02 11:17:02,830 | src.automation.password_changer | ERROR | Erro ao alterar senha de Teste João: Cannot save file into a non-existent directory: 'data'
+2026-01-02 11:17:02,831 | src.api.routes | ERROR | ❌ Erro na alteração: Cannot save file into a non-existent directory: 'data'
+2026-01-02 11:21:53,612 | src.api.main | INFO | 🛑 API encerrada

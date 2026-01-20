@@ -1,0 +1,24 @@
+SISTEMA DE GESTÃO DE SENHAS A2W
+
+=== PARA INICIAR O SISTEMA ===
+1. Dê duplo clique em "iniciar_sistema.bat"
+2. Aguarde as duas janelas abrirem (API e Frontend)
+3. Acesse no navegador: http://IP_DA_VM:3000
+
+=== ACESSAR DE OUTRO COMPUTADOR ===
+No seu navegador, digite:
+http://192.168.X.X:3000
+
+(Substitua pelo IP que aparece ao iniciar)
+
+=== CREDENCIAIS ===
+Usuário: seu.usuario
+Senha: (fornecida pelo TI)
+
+=== PARA ENCERRAR ===
+- Opção 1: Dê duplo clique em "parar_sistema.bat"
+- Opção 2: Feche as janelas pretas que abriram
+
+=== SUPORTE ===
+Problemas? Contate: João Pedro
+Email: joao.lima@a2wplataforma.com.br

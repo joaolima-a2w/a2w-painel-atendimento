@@ -1,0 +1,11 @@
+{"timestamp": "2026-01-19 17:26:50", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "sessao_iniciada", "url": "https://a2w.a2wplataforma.com.br/"}
+{"timestamp": "2026-01-19 17:27:25", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "erro", "mensagem": "Page.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"input[type=\\\"email\\\"]\")\n"}
+{"timestamp": "2026-01-19 17:30:33", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "sessao_iniciada", "url": "https://a2w.a2wplataforma.com.br/"}
+{"timestamp": "2026-01-19 17:30:40", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "erro", "mensagem": "name 'usuario' is not defined"}
+{"timestamp": "2026-01-19 17:31:30", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "sessao_iniciada", "url": "https://a2w.a2wplataforma.com.br/"}
+{"timestamp": "2026-01-19 17:31:37", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "login_sucesso", "url": "https://a2w.a2wplataforma.com.br/a2w/inicio"}
+{"timestamp": "2026-01-19 17:32:07", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "sessao_encerrada", "duracao_segundos": 37}
+{"timestamp": "2026-01-19 17:37:28", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "sessao_iniciada", "url": "https://a2w.a2wplataforma.com.br/"}
+{"timestamp": "2026-01-19 17:37:33", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "erro", "mensagem": "'senha'"}
+{"timestamp": "2026-01-19 17:39:39", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "sessao_iniciada", "url": "https://a2w.a2wplataforma.com.br/"}
+{"timestamp": "2026-01-19 17:39:47", "empresa": "Teste João", "usuario": "joao.lima@a2wplataforma.com.br", "tipo": "login_sucesso", "url": "https://a2w.a2wplataforma.com.br/a2w/inicio"}

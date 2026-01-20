@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gerador-senha"
+version = "1.0.0"
+dependencies = [
+    "playwright>=1.41.0",
+    "pandas>=2.1.0",
+    "openpyxl>=3.1.2",
+    "python-dotenv>=1.0.0",
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.5.3",
+    "pydantic-settings>=2.1.0",
+    "streamlit>=1.30.0",
+    "requests>=2.31.0",
+    "cryptography>=42.0.0",
+]
+
+[tool.setuptools]
+packages = ["config", "src", "src.utils", "src.automation", "src.api"]

@@ -1,0 +1,9 @@
+# Abrir PowerShell como Administrador
+
+$action = New-ScheduledTaskAction -Execute "C:\Users\JOAO PEDRO\Desktop\gerador_senha\agendar_reversao.bat"
+
+$trigger = New-ScheduledTaskTrigger -Daily -At 19:00
+
+$principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
+
+Register-ScheduledTask -TaskName "Reverter Senhas 19h" -Action $action -Trigger $trigger -Principal $principal -Description "Reverte senhas alteradas durante o dia para as senhas antigas"

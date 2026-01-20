@@ -1,0 +1,51 @@
+cookie:
+  expiry_days: 30
+  key: sua_chave_secreta_unica_aqui
+  name: gerador_senha_cookie
+credentials:
+  usernames:
+    abner.biasi:
+      email: abner.biasi@a2wplataforma.com.br
+      foto: /avatars/abner.biasi.png
+      name: Abner Biasi
+      password: $2b$12$7qDVPXYXz6WB0BSGQUTu9.lp8EwD2LAYb5sPOkmSQum97mdF4uxCS
+      role: user
+    andre.marcondes:
+      email: andre.marcondes@a2wplataforma.com.br
+      foto: /avatars/andre.marcondes.png
+      name: André Marcondes
+      password: $2b$12$73kLuJ8zZl6NCvWxS5K6ceIvv1L/5eYHITxUpJjZwQiq9ewo2KAnW
+      role: admin
+    andressa.braido:
+      email: andressa.braido@a2wplataforma.com.br
+      foto: /avatars/andressa.braido.png
+      name: Andressa Braido
+      password: $2b$12$ls1hV9jFf3JcqxYv88.okeMoXzIGG4RaXB2WjrnlpDdhTIfl.wlMm
+      role: admin
+    antonio.carvalho:
+      email: antonio.silva@a2wplataforma.com.br
+      foto: /avatars/antonio.carvalho.png
+      name: Antonio Carvalho
+      password: $2b$12$o.xrjgEHpnITljlRc92EYuTtPZsQhPT0TAW3etWhiwjz2P0Mweb7W
+      role: user
+    janderson.campos:
+      email: janderson.campos@a2wplataforma.com.br
+      foto: /avatars/janderson.campos.png
+      name: Janderson Campos
+      password: $2b$12$jKZzewoUV377k4NkfRdziOCQmGFFsWoW0Y8lQ7j3wPbiM4EupHL72
+      role: user
+    joao.pedro:
+      email: joao.lima@a2wplataforma.com.br
+      foto: /avatars/joao.pedro.png
+      name: João Pedro
+      password: $2b$12$cmO0m94odNIdDfXKcLFOB.kMFRkVIxrbVfa5AIP2SeM5KQr1lWJBG
+      role: admin
+    renee.araujo:
+      email: renee.araujo@a2wplataforma.com.br
+      foto: /avatars/renee.araujo.png
+      name: Reneé Araújo
+      password: $2b$12$v6deuogRfR0ixHPRjUXo6eULTgNx/0Aucp8U6qitc1PBsKFATScsi
+      role: admin
+preauthorized:
+  emails:
+  - joao.lima@a2wplataforma.com.br

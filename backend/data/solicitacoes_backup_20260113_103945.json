@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "cliente": "Atacadão Agro",
+    "usuario": "atacadao@atendimentoa2w.com.br",
+    "base": "https://atacadaoagro.a2wplataforma.com.br",
+    "senha": "3%nLGkCPr0lG",
+    "observacao": "",
+    "solicitante": "abner.biasi",
+    "ip_solicitante": "127.0.0.1",
+    "data_hora": "2026-01-09 16:24:29"
+  },
+  {
+    "id": 2,
+    "cliente": "Atacadão Agro",
+    "usuario": "atacadao@atendimentoa2w.com.br",
+    "base": "https://atacadaoagro.a2wplataforma.com.br",
+    "senha": "4G*tKcXUUEj1",
+    "observacao": "",
+    "solicitante": "joao.pedro",
+    "ip_solicitante": "127.0.0.1",
+    "data_hora": "2026-01-09 16:26:04"
+  },
+  {
+    "id": 3,
+    "cliente": "Teste João",
+    "usuario": "joao.lima@a2wplataforma.com.br",
+    "senha": "i5{CO3,<Fz<]>f_h5-A!",
+    "solicitante": "joao.pedro",
+    "ip_solicitante": "127.0.0.1",
+    "data_hora": "2026-01-09 17:36:40",
+    "observacao": "",
+    "status": "sucesso"
+  },
+  {
+    "id": 4,
+    "cliente": "Teste João",
+    "usuario": "joao.lima@a2wplataforma.com.br",
+    "senha": "h50H73zUx$Az@orBXFO*",
+    "solicitante": "joao.pedro",
+    "ip_solicitante": "127.0.0.1",
+    "data_hora": "2026-01-09 17:43:03",
+    "observacao": "",
+    "status": "sucesso"
+  },
+  {
+    "id": 5,
+    "cliente": "Teste João",
+    "usuario": "joao.lima@a2wplataforma.com.br",
+    "senha": "CYtuVpU5P%U%%b8KSaW4",
+    "solicitante": "antonio.carvalho",
+    "ip_solicitante": "127.0.0.1",
+    "data_hora": "2026-01-09 17:48:18",
+    "observacao": "",
+    "status": "sucesso"
+  },
+  {
+    "id": 6,
+    "cliente": "hml",
+    "usuario": "hml.adm.geagro.joaolima@a2wplataforma.com.br",
+    "senha": "E6mY3EdT6o7ItQaGgr$Y",
+    "solicitante": "joao.pedro",
+    "ip_solicitante": "127.0.0.1",
+    "data_hora": "2026-01-09 17:55:29",
+    "observacao": "",
+    "status": "sucesso"
+  }
+]

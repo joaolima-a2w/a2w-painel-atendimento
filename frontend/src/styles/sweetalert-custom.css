@@ -1,0 +1,44 @@
+.swal2-popup {
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.swal2-title {
+  color: #047857;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.swal2-html-container {
+  color: #374151;
+  font-size: 15px;
+}
+
+.swal2-confirm {
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 12px 24px;
+  font-size: 15px;
+}
+
+.swal2-cancel {
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 12px 24px;
+  font-size: 15px;
+}
+
+.swal2-icon.swal2-warning {
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.swal2-icon.swal2-success {
+  border-color: #047857;
+  color: #047857;
+}
+
+.swal2-icon.swal2-error {
+  border-color: #dc2626;
+  color: #dc2626;
+}

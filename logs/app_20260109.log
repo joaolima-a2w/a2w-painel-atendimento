@@ -1,0 +1,310 @@
+2026-01-09 11:13:20,318 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 11:15:13,728 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:15:13,731 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 11:15:45,415 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:15:45,416 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 11:15:47,473 | src.api.routes | INFO | 📨 Solicitação: hml por João Pedro (IP: 127.0.0.1)
+2026-01-09 11:15:48,914 | src.automation.password_changer | INFO | Iniciando alteração para: hml (Solicitante: João Pedro, IP: 127.0.0.1)
+2026-01-09 11:15:48,930 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:16:01,853 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 11:16:01,854 | src.automation.browser_automation | INFO | Navegando para: https://homologacao.a2wplataforma.com.br/
+2026-01-09 11:16:05,502 | src.automation.browser_automation | INFO | Realizando login: hml.adm.geagro.joaolima@a2wplataforma.com.br
+2026-01-09 11:16:13,777 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 11:16:13,778 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 11:16:51,547 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 11:16:51,550 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de hml: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("tab", name="Alterar Senha")
+
+2026-01-09 11:16:51,572 | src.api.routes | ERROR | ❌ Erro na alteração: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("tab", name="Alterar Senha")
+
+2026-01-09 11:22:05,099 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 11:23:44,895 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 11:24:00,860 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:24:00,862 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 11:24:18,655 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:24:18,656 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 11:24:20,754 | src.api.routes | INFO | 📨 Solicitação: hml por João Pedro (IP: 127.0.0.1)
+2026-01-09 11:24:21,179 | src.automation.password_changer | INFO | Iniciando alteração para: hml (Solicitante: João Pedro, IP: 127.0.0.1)
+2026-01-09 11:24:21,195 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:24:24,442 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 11:24:24,442 | src.automation.browser_automation | INFO | Navegando para: https://homologacao.a2wplataforma.com.br/
+2026-01-09 11:24:35,478 | src.automation.browser_automation | INFO | Realizando login: hml.adm.geagro.joaolima@a2wplataforma.com.br
+2026-01-09 11:24:40,887 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 11:24:40,888 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 11:25:19,917 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 11:25:19,918 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de hml: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("tab", name="Alterar Senha")
+
+2026-01-09 11:25:19,923 | src.api.routes | ERROR | ❌ Erro na alteração: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("tab", name="Alterar Senha")
+
+2026-01-09 11:27:28,685 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 11:27:47,665 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:27:47,669 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 11:27:57,819 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:27:57,821 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 11:27:59,907 | src.api.routes | INFO | 📨 Solicitação: hml por João Pedro (IP: 127.0.0.1)
+2026-01-09 11:28:00,289 | src.automation.password_changer | INFO | Iniciando alteração para: hml (Solicitante: João Pedro, IP: 127.0.0.1)
+2026-01-09 11:28:00,302 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:28:02,644 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 11:28:02,644 | src.automation.browser_automation | INFO | Navegando para: https://homologacao.a2wplataforma.com.br/
+2026-01-09 11:28:12,664 | src.automation.browser_automation | INFO | Realizando login: hml.adm.geagro.joaolima@a2wplataforma.com.br
+2026-01-09 11:28:17,987 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 11:28:20,989 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 11:28:33,172 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 11:28:36,258 | src.automation.browser_automation | INFO | Senha alterada com sucesso!
+2026-01-09 11:28:36,300 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 11:28:36,578 | src.utils.excel_handler | INFO | Senha atualizada para empresa: hml
+2026-01-09 11:28:36,627 | src.utils.excel_handler | INFO | Alteração registrada: hml (IP: 127.0.0.1)
+2026-01-09 11:28:36,627 | src.automation.password_changer | INFO | ✅ Senha alterada com sucesso: hml
+2026-01-09 11:28:37,455 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 11:28:37,457 | src.api.routes | INFO | ✅ Senha alterada com sucesso: hml
+2026-01-09 11:42:56,582 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 11:43:08,003 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:00:33,019 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:02:30,307 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:02:36,330 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:02:42,192 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:04:51,126 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:06:52,011 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:06:57,090 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:06:57,248 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:10:39,135 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:12:14,520 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:12:42,562 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:12:42,564 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:13:44,429 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:13:44,431 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:15:24,276 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:15:24,280 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:16:12,126 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:16:12,127 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:18:41,771 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:18:53,915 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:19:38,285 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:25:51,843 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:26:26,458 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:26:26,463 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:26:38,571 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:26:44,000 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:27:06,941 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:27:31,831 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 12:27:37,578 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:27:37,582 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:27:37,602 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:27:37,603 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:28:09,723 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:28:09,724 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:28:49,800 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:28:49,802 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 12:28:51,947 | src.api.routes | INFO | 📨 Solicitação: Teste João por Abner Biasi (abner.biasi) (IP: 127.0.0.1)
+2026-01-09 12:28:54,412 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: Abner Biasi (abner.biasi), IP: 127.0.0.1)
+2026-01-09 12:28:54,428 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:29:08,920 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 12:29:08,937 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 12:29:13,643 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 12:29:19,058 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 12:29:22,059 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 12:29:34,391 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 12:29:37,480 | src.automation.browser_automation | INFO | Senha alterada com sucesso!
+2026-01-09 12:29:37,533 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 12:29:37,729 | src.utils.excel_handler | INFO | Senha atualizada para empresa: Teste João
+2026-01-09 12:29:37,812 | src.utils.excel_handler | INFO | Alteração registrada: Teste João (IP: 127.0.0.1)
+2026-01-09 12:29:37,812 | src.automation.password_changer | INFO | ✅ Senha alterada com sucesso: Teste João
+2026-01-09 12:29:38,346 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 12:29:38,350 | src.api.routes | INFO | ✅ Senha alterada com sucesso: Teste João
+2026-01-09 12:29:50,697 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 12:29:57,052 | src.api.main | INFO | 🚀 API de Gestão de Senhas iniciada
+2026-01-09 14:09:14,875 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo data\bases.xlsx
+2026-01-09 14:09:14,878 | src.api.routes | INFO | 📋 Listadas 6 empresas
+2026-01-09 14:11:14,232 | src.api.main | INFO | 🛑 API encerrada
+2026-01-09 16:56:08,436 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 16:56:09,115 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo c:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 16:56:09,121 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: 'Settings' object has no attribute 'headless'
+2026-01-09 16:57:57,701 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 16:57:58,396 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo c:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 16:57:58,405 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-01-09 17:00:41,888 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: joao.pedro, IP: 127.0.0.1)
+2026-01-09 17:00:42,941 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo c:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:00:58,088 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:00:58,089 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:01:03,027 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:01:06,970 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:01:09,972 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:04:18,959 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 17:04:20,193 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo c:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:04:24,097 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:04:24,098 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:04:29,221 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:04:32,091 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:04:35,092 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:05:11,219 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:05:11,221 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("tab", name="Alterar Senha")
+
+2026-01-09 17:06:54,827 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 17:06:55,013 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo c:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:06:58,136 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:06:58,140 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:07:00,329 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:07:05,075 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:07:08,076 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:07:17,588 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:07:50,432 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:07:50,439 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#updateSenha")
+    - locator resolved to <button color="accent" disabled="true" id="updateSenha" mat-raised-button="" class="mat-focus-indicator save-product-button ng-tns-c246-32 mat-raised-button mat-button-base mat-accent mat-button-disabled">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+2026-01-09 17:13:14,047 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 17:13:14,350 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:13:18,031 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:13:18,032 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:13:22,426 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:13:25,265 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:13:28,266 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:13:37,179 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:13:39,755 | src.automation.browser_automation | INFO | Senha alterada com sucesso!
+2026-01-09 17:13:39,862 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:13:40,028 | src.utils.excel_handler | INFO | Senha atualizada para empresa: Teste João
+2026-01-09 17:13:41,773 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:13:41,773 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: 'Settings' object has no attribute 'senhas_geradas_path'
+2026-01-09 17:35:29,741 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: joao.pedro, IP: 127.0.0.1)
+2026-01-09 17:35:30,324 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:35:33,360 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:35:33,360 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:35:37,705 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:35:40,769 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:35:43,770 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:35:46,976 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:35:46,977 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: 'dict' object has no attribute '_object'
+2026-01-09 17:36:15,338 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: joao.pedro, IP: 127.0.0.1)
+2026-01-09 17:36:15,374 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:36:17,402 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:36:17,402 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:36:21,310 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:36:24,136 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:36:27,136 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:36:36,285 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:36:38,867 | src.automation.browser_automation | INFO | Senha alterada com sucesso!
+2026-01-09 17:36:39,010 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:36:39,166 | src.utils.excel_handler | INFO | Senha atualizada para empresa: Teste João
+2026-01-09 17:36:39,235 | src.utils.excel_handler | INFO | Alteração registrada: Teste João (IP: 127.0.0.1)
+2026-01-09 17:36:39,236 | src.automation.password_changer | INFO | ✅ Senha alterada com sucesso: Teste João
+2026-01-09 17:36:40,286 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:37:47,107 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 17:37:47,232 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:37:50,010 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:37:50,014 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:37:55,010 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:37:57,867 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:38:00,868 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:38:09,580 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:38:40,984 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:38:40,987 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#updateSenha")
+    - locator resolved to <button color="accent" disabled="true" id="updateSenha" mat-raised-button="" class="mat-focus-indicator save-product-button ng-tns-c246-32 mat-raised-button mat-button-base mat-accent mat-button-disabled">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+2026-01-09 17:42:37,360 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: joao.pedro, IP: 127.0.0.1)
+2026-01-09 17:42:37,908 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:42:40,542 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:42:40,546 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:42:45,265 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:42:48,139 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:42:51,140 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:42:59,724 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:43:02,305 | src.automation.browser_automation | INFO | Senha alterada com sucesso!
+2026-01-09 17:43:02,344 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:43:02,418 | src.utils.excel_handler | INFO | Senha atualizada para empresa: Teste João
+2026-01-09 17:43:02,522 | src.utils.excel_handler | INFO | Alteração registrada: Teste João (IP: 127.0.0.1)
+2026-01-09 17:43:02,522 | src.automation.password_changer | INFO | ✅ Senha alterada com sucesso: Teste João
+2026-01-09 17:43:03,256 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:45:22,151 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 17:45:24,001 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:45:26,228 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:45:26,229 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:45:30,358 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:45:33,469 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:45:36,470 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:45:45,110 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:46:16,295 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:46:16,295 | src.automation.password_changer | ERROR | ❌ Erro ao alterar senha de Teste João: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#updateSenha")
+    - locator resolved to <button color="accent" disabled="true" id="updateSenha" mat-raised-button="" class="mat-focus-indicator save-product-button ng-tns-c246-32 mat-raised-button mat-button-base mat-accent mat-button-disabled">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+2026-01-09 17:47:47,054 | src.automation.password_changer | INFO | Iniciando alteração para: Teste João (Solicitante: antonio.carvalho, IP: 127.0.0.1)
+2026-01-09 17:47:47,513 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:47:50,993 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:47:50,993 | src.automation.browser_automation | INFO | Navegando para: https://a2w.a2wplataforma.com.br/
+2026-01-09 17:47:55,816 | src.automation.browser_automation | INFO | Realizando login: joao.lima@a2wplataforma.com.br
+2026-01-09 17:47:58,744 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:48:01,744 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:48:11,210 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:48:13,805 | src.automation.browser_automation | INFO | Senha alterada com sucesso!
+2026-01-09 17:48:16,887 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:48:16,996 | src.utils.excel_handler | INFO | Senha atualizada para empresa: Teste João
+2026-01-09 17:48:17,105 | src.utils.excel_handler | INFO | Alteração registrada: Teste João (IP: 127.0.0.1)
+2026-01-09 17:48:17,105 | src.automation.password_changer | INFO | ✅ Senha alterada com sucesso: Teste João
+2026-01-09 17:48:18,010 | src.automation.browser_automation | INFO | Navegador fechado
+2026-01-09 17:54:54,294 | src.automation.password_changer | INFO | Iniciando alteração para: hml (Solicitante: joao.pedro, IP: 127.0.0.1)
+2026-01-09 17:54:55,227 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:54:57,731 | src.automation.browser_automation | INFO | Navegador iniciado com anti-detecção
+2026-01-09 17:54:57,732 | src.automation.browser_automation | INFO | Navegando para: https://homologacao.a2wplataforma.com.br/
+2026-01-09 17:55:01,305 | src.automation.browser_automation | INFO | Realizando login: hml.adm.geagro.joaolima@a2wplataforma.com.br
+2026-01-09 17:55:09,842 | src.automation.browser_automation | INFO | Login realizado com sucesso
+2026-01-09 17:55:12,843 | src.automation.browser_automation | INFO | Iniciando alteração de senha...
+2026-01-09 17:55:22,746 | src.automation.browser_automation | INFO | Clicando em Salvar Senha...
+2026-01-09 17:55:25,368 | src.automation.browser_automation | INFO | Senha alterada com sucesso!
+2026-01-09 17:55:28,949 | src.utils.excel_handler | INFO | Lidas 6 bases do arquivo C:\Users\JOAO PEDRO\Desktop\gerador_senha\data\bases.xlsx
+2026-01-09 17:55:29,053 | src.utils.excel_handler | INFO | Senha atualizada para empresa: hml
+2026-01-09 17:55:29,110 | src.utils.excel_handler | INFO | Alteração registrada: hml (IP: 127.0.0.1)
+2026-01-09 17:55:29,110 | src.automation.password_changer | INFO | ✅ Senha alterada com sucesso: hml
+2026-01-09 17:55:29,804 | src.automation.browser_automation | INFO | Navegador fechado
