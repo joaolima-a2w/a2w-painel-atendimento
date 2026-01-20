@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel A2W - Clientes e Integrações</title>
-    <link rel="icon" href="https://a2wplataforma.com.br/wp-content/themes/a2w/images/svg/logo-2.svg"
-        type="image/svg+xml">
     <style>
         * {
             margin: 0;
@@ -722,8 +720,6 @@
 <body>
     <div class="container">
         <header>
-            <img src="https://a2wplataforma.com.br/wp-content/themes/a2w/images/svg/logo-2.svg" alt="Logo A2W"
-                class="logo">
             <div>
                 <h1>Painel A2W - Clientes e Integrações</h1>
                 <p class="subtitle">Gerenciamento centralizado de empresas, aplicações e cronogramas de integração</p>
@@ -1210,22 +1206,67 @@
             if (e.target.id === 'companyModal') closeModal();
         });
 
-        // Initialize Data: Load from LocalStorage or use attributes
-        const savedCompanies = localStorage.getItem('a2w_companies');
-        if (savedCompanies) {
+        // API Integration Logic
+        const API_URL = '/api/dashboard/companies';
+
+        async function fetchCompanies() {
+            const auth = localStorage.getItem('basic_auth');
+            if (!auth) {
+                console.warn('⚠️ Usuário não autenticado. Redirecionando...');
+                window.parent.location.href = '/login';
+                return;
+            }
+
             try {
-                const parsed = JSON.parse(savedCompanies);
-                if (Array.isArray(parsed) && parsed.length > 0) {
-                    companies.length = 0;
-                    companies.push(...parsed);
-                    console.log('Loaded companies from LocalStorage');
+                const response = await fetch(API_URL, {
+                    headers: { 'Authorization': `Basic ${auth}` }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    if (Array.isArray(data) && data.length > 0) {
+                        companies.length = 0;
+                        companies.push(...data);
+                        console.log('✅ Dados carregados do servidor');
+                    }
+                } else if (response.status === 401) {
+                    window.parent.location.href = '/login';
                 }
             } catch (e) {
-                console.error('Failed to parse saved companies', e);
+                console.error('❌ Erro ao buscar dados do servidor:', e);
+            }
+            renderCards(companies);
+        }
+
+        async function saveToBackend() {
+            const auth = localStorage.getItem('basic_auth');
+            if (!auth) return;
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Basic ${auth}`
+                    },
+                    body: JSON.stringify(companies)
+                });
+
+                if (response.ok) {
+                    console.log('💾 Dados salvos no servidor com sucesso');
+                    const statusEl = document.getElementById('importStatus');
+                    if (statusEl) {
+                        statusEl.textContent += " e sincronizados com o servidor!";
+                    }
+                } else {
+                    console.error('❌ Erro ao salvar no servidor:', await response.text());
+                }
+            } catch (e) {
+                console.error('❌ Erro na requisição de salvamento:', e);
             }
         }
 
-        renderCards(companies);
+        // Initialize Data
+        fetchCompanies();
 
         // Importação de arquivo
         document.getElementById('fileInputBtn').addEventListener('click', () => {
@@ -1234,10 +1275,11 @@
 
         document.getElementById('csvFile').addEventListener('change', handleFileImport);
 
-        function saveToLocalStorage() {
+        async function saveToLocalStorage() {
             try {
                 localStorage.setItem('a2w_companies', JSON.stringify(companies));
                 console.log('💾 Companies saved to LocalStorage');
+                await saveToBackend(); // Sync with everyone
             } catch (e) {
                 console.error('Failed to save to LocalStorage', e);
             }

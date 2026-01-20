@@ -28,3 +28,29 @@ class HealthCheck(BaseModel):
     status: str
     versao: str
     timestamp: str
+
+class AppStatus(BaseModel):
+    cons: bool = False
+    rdv: bool = False
+    arm: bool = False
+    distr: bool = False
+
+class Contact(BaseModel):
+    name: str
+    role: str
+    dept: str
+    phone: Optional[str] = None
+
+class Company(BaseModel):
+    name: str
+    category: str
+    city: str
+    state: str
+    manager: str
+    erp: str
+    integration: str
+    contacts: list[Contact] = []
+    apps: AppStatus
+    status: str
+    workers: str = ""
+    obs: str = ""

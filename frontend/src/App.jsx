@@ -42,8 +42,8 @@ function App() {
 
   if (loading) {
     return (
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-        <div style={{fontSize: '20px', color: '#047857', fontWeight: '600'}}>Carregando...</div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div style={{ fontSize: '20px', color: '#047857', fontWeight: '600' }}>Carregando...</div>
       </div>
     )
   }
@@ -52,40 +52,40 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* LOGIN */}
-        <Route 
-          path="/login" 
-          element={!user ? <Login onLogin={login} /> : <Navigate to="/" />} 
+        <Route
+          path="/login"
+          element={!user ? <Login onLogin={login} /> : <Navigate to="/" />}
         />
         
         {/* ROTAS COM SIDEBAR */}
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <PrivateRoute user={user}>
               <Layout user={user} onLogout={logout} />
             </PrivateRoute>
           }
         >
-   
-          <Route 
-            path="logs" 
-            element={user?.role === 'admin' ? <LogsAtividades user={user} /> : <Navigate to="/solicitar" />} 
+
+          <Route
+            path="logs"
+            element={user?.role === 'admin' ? <LogsAtividades user={user} /> : <Navigate to="/solicitar" />}
           />
           <Route path="acesso-rapido" element={<AcessoRapido user={user} />} />
           <Route index element={<Navigate to="/solicitar" replace />} />
           <Route path="solicitar" element={<SolicitarSenha user={user} />} />
-          <Route path="dashboard" element={<DashboardA2W />} />
-          
+          <Route path="dashboard" element={<iframe src="/A2W-Dashboard.html" style={{ width: '100%', height: 'calc(100vh - 4px)', border: 'none' }} />} />
+
           {/* ROTAS ADMIN */}
-          <Route 
-            path="admin" 
-            element={user?.role === 'admin' ? <PainelAdmin user={user} /> : <Navigate to="/solicitar" />} 
+          <Route
+            path="admin"
+            element={user?.role === 'admin' ? <PainelAdmin user={user} /> : <Navigate to="/solicitar" />}
           />
-          <Route 
-            path="agendamentos" 
-            element={user?.role === 'admin' ? <Agendamentos user={user} /> : <Navigate to="/solicitar" />} 
+          <Route
+            path="agendamentos"
+            element={user?.role === 'admin' ? <Agendamentos user={user} /> : <Navigate to="/solicitar" />}
           />
-          
+
           {/* OUTRAS ROTAS */}
           <Route path="usuarios" element={<GerenciarUsuarios user={user} />} />
           <Route path="sobre" element={<Sobre />} />
