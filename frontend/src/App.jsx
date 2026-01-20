@@ -41,8 +41,8 @@ function App() {
 
   if (loading) {
     return (
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-        <div style={{fontSize: '20px', color: '#047857', fontWeight: '600'}}>Carregando...</div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div style={{ fontSize: '20px', color: '#047857', fontWeight: '600' }}>Carregando...</div>
       </div>
     )
   }
@@ -51,79 +51,41 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* LOGIN */}
-        <Route 
-          path="/login" 
-          element={!user ? <Login onLogin={login} /> : <Navigate to="/" />} 
+        <Route
+          path="/login"
+          element={!user ? <Login onLogin={login} /> : <Navigate to="/" />}
         />
 
-        {/* DASHBOARD FULLSCREEN (SEM SIDEBAR) */}
-        <Route 
-          path="/dashboard" 
-          element={
-            <PrivateRoute user={user}>
-              <div style={{ position: 'relative', height: '100vh', margin: 0, padding: 0 }}>
-                <button
-                  onClick={() => window.location.href = '/'}
-                  style={{
-                    position: 'fixed',
-                    top: '20px',
-                    left: '20px',
-                    zIndex: 9999,
-                    padding: '12px 24px',
-                    background: 'linear-gradient(135deg, #047857 0%, #065f46 100%)',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    fontWeight: '700',
-                    fontSize: '14px',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                  }}
-                >
-                  <span>← Voltar ao Sistema</span>
-                </button>
 
-                <iframe 
-                  src="/A2W-Dashboard.html"
-                  style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
-                  title="Dashboard A2W"
-                />
-              </div>
-            </PrivateRoute>
-          } 
-        />
-        
         {/* ROTAS COM SIDEBAR */}
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <PrivateRoute user={user}>
               <Layout user={user} onLogout={logout} />
             </PrivateRoute>
           }
         >
-   
-          <Route 
-            path="logs" 
-            element={user?.role === 'admin' ? <LogsAtividades user={user} /> : <Navigate to="/solicitar" />} 
+
+          <Route
+            path="logs"
+            element={user?.role === 'admin' ? <LogsAtividades user={user} /> : <Navigate to="/solicitar" />}
           />
           <Route path="acesso-rapido" element={<AcessoRapido user={user} />} />
           <Route index element={<Navigate to="/solicitar" replace />} />
           <Route path="solicitar" element={<SolicitarSenha user={user} />} />
-          
+          <Route path="dashboard" element={<iframe src="/A2W-Dashboard.html" style={{ width: '100%', height: 'calc(100vh - 4px)', border: 'none' }} />} />
+
           {/* ROTAS ADMIN */}
-          <Route 
-            path="admin" 
-            element={user?.role === 'admin' ? <PainelAdmin user={user} /> : <Navigate to="/solicitar" />} 
+          <Route
+            path="admin"
+            element={user?.role === 'admin' ? <PainelAdmin user={user} /> : <Navigate to="/solicitar" />}
           />
-          <Route 
-            path="agendamentos" 
-            element={user?.role === 'admin' ? <Agendamentos user={user} /> : <Navigate to="/solicitar" />} 
+          <Route
+            path="agendamentos"
+            element={user?.role === 'admin' ? <Agendamentos user={user} /> : <Navigate to="/solicitar" />}
           />
-          
+
           {/* OUTRAS ROTAS */}
           <Route path="usuarios" element={<GerenciarUsuarios user={user} />} />
           <Route path="sobre" element={<Sobre />} />

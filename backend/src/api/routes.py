@@ -5,7 +5,9 @@ ROOT_DIR = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(ROOT_DIR))
 
 from fastapi import APIRouter, HTTPException, Depends, Header, Request
-from src.api.models import SolicitacaoSenha, RespostaSenha, HealthCheck
+from src.api.models import SolicitacaoSenha, RespostaSenha, HealthCheck, Company
+import json
+import os
 from datetime import datetime
 import logging
 import asyncio
@@ -127,3 +129,35 @@ async def solicitar_senha(
     except Exception as e:
         logger.error(f"❌ Erro ao processar solicitação: {e}")
         raise HTTPException(status_code=500, detail=f"Erro interno: {str(e)}")
+
+# --- Dashboad Company Routes ---
+
+COMPANIES_FILE = ROOT_DIR / "data" / "companies.json"
+
+def read_companies_data():
+    if not os.path.exists(COMPANIES_FILE):
+        return []
+    with open(COMPANIES_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def write_companies_data(data):
+    with open(COMPANIES_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+@router.get("/dashboard/companies", response_model=list[Company])
+async def get_companies():
+    """Retorna a lista de empresas do dashboard"""
+    return read_companies_data()
+
+@router.post("/dashboard/companies")
+async def save_companies(companies: list[Company], api_key: str = Depends(verificar_api_key)):
+    """Salva a lista completa de empresas do dashboard"""
+    try:
+        # Converter models para dict para salvar no JSON
+        data = [c.model_dump() for c in companies]
+        write_companies_data(data)
+        logger.info(f"💾 Dashboard atualizado: {len(data)} empresas salvas")
+        return {"status": "sucesso", "total": len(data)}
+    except Exception as e:
+        logger.error(f"❌ Erro ao salvar empresas: {e}")
+        raise HTTPException(status_code=500, detail=str(e))

@@ -150,6 +150,32 @@ class UsuarioResponse(BaseModel):
     role: str
     foto: Optional[str] = None
 
+class AppStatus(BaseModel):
+    cons: bool = False
+    rdv: bool = False
+    arm: bool = False
+    distr: bool = False
+
+class Contact(BaseModel):
+    name: str
+    role: str
+    dept: str
+    phone: Optional[str] = None
+
+class Company(BaseModel):
+    name: str
+    category: str
+    city: str
+    state: str
+    manager: str
+    erp: str
+    integration: str
+    contacts: list[Contact] = []
+    apps: AppStatus
+    status: str
+    workers: str = ""
+    obs: str = ""
+
 # ========================================
 # AUTENTICAÇÃO
 # ========================================
@@ -1638,6 +1664,50 @@ async def auto_login(token: str):
     """
     
     return HTMLResponse(html)
+
+# ========================================
+# ENDPOINTS DASHBOARD (COMPANIES)
+# ========================================
+
+COMPANIES_FILE = ROOT_DIR / "data" / "companies.json"
+
+def carregar_dados_dashboard():
+    if not COMPANIES_FILE.exists():
+        return []
+    try:
+        with open(COMPANIES_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        logger.error(f"Erro ao carregar dashboard: {e}")
+        return []
+
+def salvar_dados_dashboard(data):
+    try:
+        COMPANIES_FILE.parent.mkdir(exist_ok=True)
+        with open(COMPANIES_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        return True
+    except Exception as e:
+        logger.error(f"Erro ao salvar dashboard: {e}")
+        return False
+
+@app.get("/dashboard/companies", response_model=List[Company])
+async def get_dashboard_companies(usuario: dict = Depends(verificar_credenciais)):
+    """Retorna a lista de empresas do dashboard"""
+    return carregar_dados_dashboard()
+
+@app.post("/dashboard/companies")
+async def post_dashboard_companies(companies: List[Company], usuario: dict = Depends(verificar_credenciais)):
+    """Salva a lista completa de empresas do dashboard"""
+    # Só admin pode salvar se quisermos restringir, mas o usuário pediu que "quem subir" afete a todos.
+    # Vou permitir qualquer usuário autenticado por enquanto, ou restringir a admin se preferir.
+    
+    data = [c.model_dump() for c in companies]
+    if salvar_dados_dashboard(data):
+        logger.info(f"Dashboard atualizado por {usuario['username']}: {len(data)} empresas")
+        return {"status": "success", "total": len(data)}
+    else:
+        raise HTTPException(500, "Erro ao salvar dados do dashboard")
 
 
 
