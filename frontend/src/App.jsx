@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Layout from './components/Layout'
 import SolicitarSenha from './pages/SolicitarSenha'
 import AcessoRapido from './pages/AcessoRapido';
+import DashboardA2W from './pages/DashboardA2W' 
 import PainelAdmin from './pages/PainelAdmin'
 import GerenciarUsuarios from './pages/GerenciarUsuarios'
 import Agendamentos from './pages/Agendamentos'
@@ -55,46 +56,6 @@ function App() {
           path="/login" 
           element={!user ? <Login onLogin={login} /> : <Navigate to="/" />} 
         />
-
-        {/* DASHBOARD FULLSCREEN (SEM SIDEBAR) */}
-        <Route 
-          path="/dashboard" 
-          element={
-            <PrivateRoute user={user}>
-              <div style={{ position: 'relative', height: '100vh', margin: 0, padding: 0 }}>
-                <button
-                  onClick={() => window.location.href = '/'}
-                  style={{
-                    position: 'fixed',
-                    top: '20px',
-                    left: '20px',
-                    zIndex: 9999,
-                    padding: '12px 24px',
-                    background: 'linear-gradient(135deg, #047857 0%, #065f46 100%)',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    fontWeight: '700',
-                    fontSize: '14px',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                  }}
-                >
-                  <span>← Voltar ao Sistema</span>
-                </button>
-
-                <iframe 
-                  src="/A2W-Dashboard.html"
-                  style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
-                  title="Dashboard A2W"
-                />
-              </div>
-            </PrivateRoute>
-          } 
-        />
         
         {/* ROTAS COM SIDEBAR */}
         <Route 
@@ -113,6 +74,7 @@ function App() {
           <Route path="acesso-rapido" element={<AcessoRapido user={user} />} />
           <Route index element={<Navigate to="/solicitar" replace />} />
           <Route path="solicitar" element={<SolicitarSenha user={user} />} />
+          <Route path="dashboard" element={<DashboardA2W />} />
           
           {/* ROTAS ADMIN */}
           <Route 

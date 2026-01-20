@@ -105,7 +105,7 @@ if errorlevel 1 (
 
 REM Servir build em nova janela
 echo Iniciando servidor frontend...
-start "A2W Frontend - Porta 3000" cmd /k "serve -s dist -p 3000 -l 0.0.0.0"
+start "A2W Frontend" cmd /k "npx serve -c serve.json -p 3000"
 
 cd ..
 
