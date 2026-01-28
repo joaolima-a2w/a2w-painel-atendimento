@@ -1002,7 +1002,9 @@
                 card.className = 'company-card';
                 card.onclick = () => openModal(company);
 
-                const appsCount = Object.values(company.apps).filter(v => v).length;
+                const appsCount = Object.values(company.apps || {}).filter(v => v).length;
+                const modulesCount = company.modules ? Object.values(company.modules).filter(v => v).length : 0;
+
                 const statusClass = company.status === 'PRODUÇÃO' ? 'status-producao' : 'status-implantacao';
                 const location = company.city && company.state ? `${company.city}, ${company.state}` : 'Não informado';
 
@@ -1030,6 +1032,10 @@
                         <div class="info-row">
                             <span class="info-label">Apps</span>
                             <span class="info-value">${appsCount} ativo(s)</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Módulos</span>
+                            <span class="info-value">${modulesCount} ativo(s)</span>
                         </div>
                         <div class="info-row">
                             <span class="info-label">Workers</span>
@@ -1066,6 +1072,9 @@
             } else {
                 contactsHtml = '<div class="contact-item" style="color: var(--text-secondary);">Nenhum contato registrado</div>';
             }
+
+            // Ensure modules exist for display
+            const modules = company.modules || { semaforo: false, oferta: false, planilhas: false };
 
             body.innerHTML = `
                 <div class="section">
@@ -1105,7 +1114,7 @@
                 </div>
 
                 <div class="section">
-                    <div class="section-title">Módulos contratados</div>
+                    <div class="section-title">Aplicativos Contratados</div>
                     <div class="apps-grid">
                         <div class="app-card ${company.apps.cons ? 'active' : 'inactive'}">
                             <div class="app-name">App Consultor</div>
@@ -1123,6 +1132,24 @@
                             <div class="app-name">Distribuição</div>
                             <div class="app-status">${company.apps.distr ? 'Ativo' : 'Inativo'}</div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Módulos Adicionais</div>
+                    <div class="apps-grid">
+                        ${Object.keys(modules)
+                    .sort()
+                    .map(key => {
+                        const isActive = modules[key];
+                        const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                        return `
+                                    <div class="app-card ${isActive ? 'active' : 'inactive'}">
+                                        <div class="app-name">${label}</div>
+                                        <div class="app-status">${isActive ? 'Ativo' : 'Inativo'}</div>
+                                    </div>
+                                `;
+                    }).join('')}
                     </div>
                 </div>
 
@@ -1265,7 +1292,21 @@
                     ];
                     const hasIntegrationSheets = workbook.SheetNames.some(name => integrationSheets.some(erp => name.includes(erp)));
 
-                    if (hasIntegrationSheets) {
+                    // Check for Subscription/Billing File (Module Update)
+                    // Check for Subscription/Billing File (Module Update)
+                    const isSubscription = workbook.SheetNames.some(name =>
+                        name.toLowerCase().includes('faturamento') ||
+                        name.toLowerCase().includes('subscrição') ||
+                        name.toLowerCase().includes('mensal')
+                    );
+
+                    if (isSubscription) {
+                        if (file.name.toLowerCase().startsWith('faturamento subscrição')) {
+                            handleSpecialSubscriptionUpdate(workbook, statusEl);
+                        } else {
+                            handleSubscriptionUpdate(workbook, statusEl);
+                        }
+                    } else if (hasIntegrationSheets) {
                         handleWorkerUpdate(workbook, integrationSheets, statusEl);
                     } else {
                         // Standard Import (Full Replace)
@@ -1302,6 +1343,11 @@
                     arm: row['App Armazém'] === 'Sim' || row['App Armazém'] === true,
                     distr: row['App Distribuição'] === 'Sim' || row['App Distribuição'] === true
                 },
+                modules: {
+                    planilhas: row['Módulo Planilhas'] === 'Sim' || row['Módulo Planilhas'] === true,
+                    semaforo: row['Módulo Semáforo'] === 'Sim' || row['Módulo Semáforo'] === true,
+                    oferta: row['Módulo Oferta'] === 'Sim' || row['Módulo Oferta'] === true
+                },
                 workers: row['Workers'] || '',
                 obs: row['Observações'] || ''
             }));
@@ -1313,6 +1359,231 @@
 
             statusEl.textContent = `✅ ${importedCompanies.length} empresas carregadas com sucesso!`;
             statusEl.className = 'import-status success';
+        }
+
+        function handleSpecialSubscriptionUpdate(workbook, statusEl) {
+            const sheetName = workbook.SheetNames.find(s =>
+                s.toLowerCase().includes('faturamento') ||
+                s.toLowerCase().includes('subscrição')
+            );
+
+            if (!sheetName) return;
+            const sheet = workbook.Sheets[sheetName];
+
+            // Convert sheet to JSON array of arrays (header is 2nd row => index 1)
+            const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+            // Validate Structure
+            if (rows.length < 3) {
+                statusEl.textContent = '❌ Planilha com formato inesperado (linhas insuficientes).';
+                statusEl.className = 'import-status error';
+                return;
+            }
+
+            // Row index 1 (Line 2) contains headers
+            const headerRow = rows[1];
+
+            // Map column indexes to Module Names
+            const columnMap = {};
+            headerRow.forEach((col, index) => {
+                if (index === 0 || !col) return; // Skip Col A
+                // Remove initial numbers and dots (e.g. "1.1 ", "1.2.1 ")
+                let cleanName = col.toString().replace(/^[\d\.]+\s*/, '').trim();
+                if (cleanName) {
+                    columnMap[index] = cleanName;
+                }
+            });
+
+            console.log("Mapped Columns:", columnMap);
+
+            let updatedCount = 0;
+            const normalize = (str) => str ? str.toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() : "";
+
+            for (let i = 2; i < rows.length; i++) {
+                const row = rows[i];
+                const clientName = row[0]; // Always Col A
+
+                if (!clientName) continue;
+
+                const company = findCompanyFuzzy(clientName);
+                if (company) {
+                    let changed = false;
+                    // Ensure modules object
+                    if (!company.modules) company.modules = {};
+
+                    // Iterate mapped columns
+                    Object.entries(columnMap).forEach(([colIndex, moduleName]) => {
+                        const cellValue = row[colIndex] ? row[colIndex].toString().toLowerCase().trim() : '';
+                        const isActive = cellValue === 'x' || cellValue === 'sim' || cellValue === 's';
+
+                        const nName = normalize(moduleName);
+
+                        // APPS
+                        if (nName.includes('app rdv') && !nName.includes('api')) {
+                            if (company.apps.rdv !== isActive) { company.apps.rdv = isActive; changed = true; }
+                        }
+                        else if (nName.includes('app consultor')) {
+                            if (company.apps.cons !== isActive) { company.apps.cons = isActive; changed = true; }
+                        }
+                        else if (nName.includes('app distribuidor')) {
+                            if (company.apps.distr !== isActive) { company.apps.distr = isActive; changed = true; }
+                        }
+                        // MODULES
+                        else {
+                            // Use normalized name as key (replace spaces with underscores)
+                            // e.g., "agenda e atividades" -> "agenda_e_atividades"
+                            const key = nName.replace(/\s+/g, '_');
+                            if (company.modules[key] !== isActive) {
+                                company.modules[key] = isActive;
+                                changed = true;
+                            }
+                        }
+                    });
+
+                    if (changed) updatedCount++;
+                }
+            }
+
+            if (updatedCount > 0) {
+                saveToLocalStorage();
+                filterCompanies();
+                statusEl.textContent = `✅ [Especial] Módulos atualizados para ${updatedCount} empresas!`;
+                statusEl.className = 'import-status success';
+            } else {
+                statusEl.textContent = `⚠️ Nenhuma empresa correspondente encontrada no formato especial.`;
+                statusEl.className = 'import-status error';
+            }
+        }
+
+        function handleSubscriptionUpdate(workbook, statusEl) {
+            const sheetName = workbook.SheetNames.find(s =>
+                s.toLowerCase().includes('faturamento') ||
+                s.toLowerCase().includes('subscrição') ||
+                s.toLowerCase().includes('mensal')
+            );
+
+            if (!sheetName) return;
+
+            const sheet = workbook.Sheets[sheetName];
+            const headerRow = findHeaderRow(sheet);
+
+            if (headerRow === -1) {
+                statusEl.textContent = '❌ Cabeçalho não encontrado na aba de Faturamento (Identifique colunas como: Empresa, Cliente, Parceiro).';
+                statusEl.className = 'import-status error';
+                return;
+            }
+
+            const rawData = XLSX.utils.sheet_to_json(sheet, { range: headerRow, defval: '' });
+            let updatedCount = 0;
+
+            const normalize = (str) => str ? str.toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() : "";
+
+            rawData.forEach(row => {
+                // Find company key
+                const companyKey = Object.keys(row).find(k => {
+                    const clean = normalize(k);
+                    return clean === 'empresa' || clean === 'cliente' || clean.includes('parceiro') || clean.includes('razao') || clean === 'nome';
+                });
+
+                if (!companyKey) return;
+                const companyName = row[companyKey];
+                if (!companyName || !companyName.toString().trim()) return;
+
+                const company = findCompanyFuzzy(companyName);
+                if (company) {
+                    let changed = false;
+
+                    // Ensure modules object exists
+                    if (!company.modules) company.modules = { semaforo: false, oferta: false, planilhas: false };
+
+                    // Update Category if present
+                    const catKey = Object.keys(row).find(k => {
+                        const clean = normalize(k);
+                        return clean === 'categoria' || clean.includes('classificacao');
+                    });
+
+                    if (catKey && row[catKey]) {
+                        const newCat = row[catKey].toString().trim();
+                        if (newCat && newCat !== '-') {
+                            company.category = newCat;
+                            changed = true;
+                        }
+                    }
+
+                    // Helper to check for "X" or "Sim"
+                    const checkVal = (keywords) => {
+                        const key = Object.keys(row).find(k =>
+                            keywords.some(kw => normalize(k).includes(kw))
+                        );
+                        if (key) {
+                            const val = normalize(row[key]);
+                            return val === 'x' || val === 'sim' || val === 's' || val === 'yes' || val === 'ativo';
+                        }
+                        return false;
+                    };
+
+                    const hasCol = (keywords) => Object.keys(row).some(k => keywords.some(kw => normalize(k).includes(kw)));
+
+                    // --- APPS ---
+                    if (hasCol(['consultor', 'app consultor'])) {
+                        const newVal = checkVal(['consultor', 'app consultor']);
+                        if (company.apps.cons !== newVal) { company.apps.cons = newVal; changed = true; }
+                    }
+
+                    if (hasCol(['rdv', 'app rdv'])) {
+                        const newVal = checkVal(['rdv', 'app rdv']);
+                        if (company.apps.rdv !== newVal) { company.apps.rdv = newVal; changed = true; }
+                    }
+
+                    if (hasCol(['armaz', 'app armaz'])) {
+                        const newVal = checkVal(['armaz', 'app armaz']);
+                        if (company.apps.arm !== newVal) { company.apps.arm = newVal; changed = true; }
+                    }
+
+                    if (hasCol(['distribui', 'app distribui'])) {
+                        const newVal = checkVal(['distribui', 'app distribui']);
+                        if (company.apps.distr !== newVal) { company.apps.distr = newVal; changed = true; }
+                    }
+
+                    // --- MODULES ---
+                    // Planilhas
+                    if (hasCol(['planilha', 'excel', 'gestao'])) {
+                        const newVal = checkVal(['planilha', 'excel', 'gestao']);
+                        if (company.modules.planilhas !== newVal) {
+                            company.modules.planilhas = newVal;
+                            changed = true;
+                        }
+                    }
+                    // Semáforo
+                    if (hasCol(['semaforo'])) {
+                        const newVal = checkVal(['semaforo']);
+                        if (company.modules.semaforo !== newVal) {
+                            company.modules.semaforo = newVal;
+                            changed = true;
+                        }
+                    }
+                    // Oferta Estruturada
+                    if (hasCol(['oferta'])) {
+                        const newVal = checkVal(['oferta']);
+                        if (company.modules.oferta !== newVal) {
+                            company.modules.oferta = newVal;
+                            changed = true;
+                        }
+                    }
+
+                    if (changed) updatedCount++;
+                }
+            });
+
+            if (updatedCount > 0) {
+                saveToLocalStorage();
+                filterCompanies();
+                statusEl.textContent = `✅ Módulos e categorias atualizados para ${updatedCount} empresas!`;
+                statusEl.className = 'import-status success';
+            } else {
+                statusEl.textContent = `⚠️ Nenhuma empresa correspondente encontrada para atualizar. Verifique os nomes e colunas.`;
+                statusEl.className = 'import-status error';
+            }
         }
 
         function handleWorkerUpdate(workbook, sheetsToProcess, statusEl) {
@@ -1380,16 +1651,25 @@
             if (!sheet || !sheet['!ref']) return -1;
             const range = XLSX.utils.decode_range(sheet['!ref']);
 
-            for (let R = range.s.r; R <= Math.min(range.e.r, 20); ++R) {
-                const row = [];
+            const normalize = (str) => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+
+            for (let R = range.s.r; R <= Math.min(range.e.r, 25); ++R) {
+                const rowValues = [];
                 for (let C = range.s.c; C <= range.e.c; ++C) {
                     const cellAddress = { c: C, r: R };
                     const cell = sheet[XLSX.utils.encode_cell(cellAddress)];
-                    if (cell && cell.v) row.push(cell.v.toString().trim());
+                    if (cell && cell.v) rowValues.push(normalize(cell.v.toString()));
                 }
 
-                if (row.length > 2 && (
-                    row.some(val => val.toLowerCase() === 'empresa' || val.toLowerCase() === 'cliente' || val.toLowerCase() === 'razao social' || val.toLowerCase() === 'parceiro de negocio')
+                if (rowValues.length > 0 && (
+                    rowValues.some(val =>
+                        val === 'empresa' ||
+                        val === 'cliente' ||
+                        val.includes('razao social') ||
+                        val.includes('parceiro') ||
+                        val === 'nome' ||
+                        val === 'nome do cliente'
+                    )
                 )) {
                     return R;
                 }
@@ -1479,6 +1759,9 @@
                     'App RDV': company.apps.rdv ? 'Sim' : 'Não',
                     'App Armazém': company.apps.arm ? 'Sim' : 'Não',
                     'App Distribuição': company.apps.distr ? 'Sim' : 'Não',
+                    'Módulo Planilhas': (company.modules && company.modules.planilhas) ? 'Sim' : 'Não',
+                    'Módulo Semáforo': (company.modules && company.modules.semaforo) ? 'Sim' : 'Não',
+                    'Módulo Oferta': (company.modules && company.modules.oferta) ? 'Sim' : 'Não',
                     'Workers': company.workers || '',
                     'Contatos': JSON.stringify(company.contacts),
                     'Observações': company.obs || ''
@@ -1502,7 +1785,10 @@
                     { wch: 18 },
                     { wch: 12 },
                     { wch: 15 },
+                    { wch: 15 },
+                    { wch: 15 },
                     { wch: 18 },
+                    { wch: 25 },
                     { wch: 25 }
                 ];
 
