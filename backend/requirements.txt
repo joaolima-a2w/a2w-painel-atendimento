@@ -3,27 +3,26 @@
 # ========================================
 
 # Framework Web
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-pydantic==2.5.3
-pydantic-settings==2.1.0
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
 
 # CORS
-python-multipart==0.0.6
+python-multipart
 
 # Dados
-pandas==2.1.4
-openpyxl==3.1.2
+pandas
+openpyxl
 
 # Automação
-playwright==1.40.0
+playwright
 
 # Utilitários
-python-dotenv==1.0.0
-PyYAML==6.0.1
-bcrypt==4.1.2
-requests==2.31.0
-
+python-dotenv
+PyYAML
+bcrypt
+requests
 # Desenvolvimento (opcional)
-pytest==7.4.3
-httpx==0.26.0
+pytest
+httpx
