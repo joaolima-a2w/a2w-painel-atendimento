@@ -475,5 +475,19 @@
     "observacao": "Reutilização da senha gerada em 2026-01-19 14:46:34",
     "status": "reutilizada",
     "reutilizada": true
+  },
+  {
+    "id": 37,
+    "cliente": "hml",
+    "usuario": "hml.adm.geagro.joaolima@a2wplataforma.com.br",
+    "senha": "QbA9YCp5&6Ev",
+    "senha_antiga": "NathPands2705@",
+    "solicitante": "João Pedro",
+    "usuario_sistema": "joao.pedro",
+    "ip_solicitante": "192.168.0.190",
+    "data_hora": "2026-01-21 14:20:22",
+    "observacao": "",
+    "status": "sucesso",
+    "reutilizada": false
   }
 ]

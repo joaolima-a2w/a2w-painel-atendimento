@@ -126,7 +126,7 @@ class AgenteHandler(BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     print("\n" + "="*60)
-    print("  🤖 AGENTE DESKTOP A2W")
+    print("  AGENTE DESKTOP A2W")
     print("="*60)
     print("  http://localhost:5555")
     print("  Logs: Enviados para " + API_URL)

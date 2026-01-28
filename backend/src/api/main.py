@@ -414,52 +414,31 @@ async def login(usuario: Usuario):
 
 @app.get("/bases")
 async def listar_bases(usuario: dict = Depends(verificar_credenciais)):
-    # LOG 1: Ver usuário
-    logger.info(f"🔍 USUÁRIO COMPLETO: {usuario}")
-    
-    try:
-        import pandas as pd
-        df = pd.read_excel(settings.bases_file)
-        eh_admin = usuario['role'] == 'admin'
-        logger.info(f"🔍 É admin? {eh_admin}")
-        required_cols = ['empresa', 'url', 'usuario']
-        if not all(col in df.columns for col in required_cols):
-            raise HTTPException(
-                status_code=500,
-                detail=f"Excel deve ter colunas: {', '.join(required_cols)}"
-            )
-        
-        df = df.dropna(subset=['empresa'])
-        
-        
-        if usuario['role'] == 'admin' and 'senha' in df.columns:
-            cols = ['empresa', 'url', 'usuario', 'senha']
-        else:
-            cols = ['empresa', 'url', 'usuario']
-        
-        
-        cols = [c for c in cols if c in df.columns]
-        bases = df[cols].to_dict('records')
-        
-        logger.info(f"Bases listadas por {usuario['username']} ({usuario['role']}): {len(bases)} registros")
-        
-        return {
-            "status": "success",
-            "total": len(bases),
-            "bases": bases
-        }
-        
-    except FileNotFoundError:
-        raise HTTPException(404, f"Arquivo não encontrado: {settings.bases_file}")
-    except Exception as e:
-        logger.error(f"Erro ao listar bases: {e}", exc_info=True)
-        raise HTTPException(500, f"Erro ao ler bases: {str(e)}")
+    import pandas as pd
+    df = pd.read_excel(settings.bases_file)
+
+    required_cols = ['empresa', 'url', 'usuario']
+    if not all(col in df.columns for col in required_cols):
+        ...
+
+    df = df.dropna(subset=['empresa'])
+
+    # Só perfis autorizados recebem a senha
+    roles_com_senha = {"admin", "user"}
+    if usuario["role"] in roles_com_senha and "senha" in df.columns:
+        cols = ["empresa", "url", "usuario", "senha"]
+    else:
+        cols = ["empresa", "url", "usuario"]
+
+    cols = [c for c in cols if c in df.columns]
+    bases = df[cols].to_dict("records")
+
+    return {"status": "success", "total": len(bases), "bases": bases}
 
 # ========================================
 # ENDPOINTS PROTEGIDOS
 # ========================================
 
-# Servir arquivos estáticos (avatars)
 app.mount("/avatars", StaticFiles(directory=str(AVATARS_DIR)), name="avatars")
 
 @app.post("/upload/avatar")
@@ -1304,11 +1283,8 @@ async def salvar_log_atividade(dados: dict):
     try:
         empresa = dados.get('empresa', 'desconhecido')
         timestamp = datetime.now().strftime('%Y%m%d')
-        
-        # Arquivo de log do dia
         log_file = LOGS_DIR / f"{empresa}_{timestamp}.jsonl"
         
-        # Adicionar entrada ao arquivo (JSONL - uma linha por evento)
         with open(log_file, 'a', encoding='utf-8') as f:
             f.write(json.dumps(dados, ensure_ascii=False) + '\n')
         
@@ -1329,7 +1305,6 @@ async def listar_logs_empresa(
     try:
         logs = []
         
-        # Buscar todos os arquivos da empresa
         for log_file in LOGS_DIR.glob(f"{empresa}_*.jsonl"):
             with open(log_file, 'r', encoding='utf-8') as f:
                 for line in f:
@@ -1355,12 +1330,9 @@ async def acesso_a2w(
     try:
         empresa = dados.get('empresa')
         base_data = validar_cliente_existe(empresa)
-        
-        # LOG: Ver credenciais que estão sendo usadas
         logger.info(f"🔍 Tentando login para {empresa}")
         logger.info(f"🔍 Usuário: {base_data['usuario']}")
         logger.info(f"🔍 URL: {base_data['url']}")
-        # NÃO LOGAR A SENHA em produção
         
         url_login = "https://api.a2wplataforma.com.br:7082/api/v1/user/login"
         
@@ -1399,8 +1371,7 @@ async def acesso_a2w(
                 raise HTTPException(500, "Token de acesso não retornado pela API")
             
             logger.info(f"Login A2W bem-sucedido: {empresa}")
-            
-            # Registrar no histórico
+          
             solicitacoes = carregar_solicitacoes()
             novo_acesso = {
                 "id": gerar_proximo_id(solicitacoes),
@@ -1417,8 +1388,7 @@ async def acesso_a2w(
             }
             solicitacoes.append(novo_acesso)
             salvar_solicitacoes(solicitacoes)
-            
-            # Dentro do if response.status_code == 200:
+
             token_temporario = secrets.token_urlsafe(32)
             cache_tokens[token_temporario] = {
                 'token_jwt': token,
