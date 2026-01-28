@@ -1,0 +1,17 @@
+{"timestamp": "2026-01-21 13:43:06", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 13:43:11", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "erro", "mensagem": "'senha'"}
+{"timestamp": "2026-01-21 13:43:19", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 13:43:23", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "erro", "mensagem": "'senha'"}
+{"timestamp": "2026-01-21 13:44:16", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 13:44:20", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "login_sucesso", "url": "https://tatiminas.a2wplataforma.com.br/a2w/inicio"}
+{"timestamp": "2026-01-21 13:45:01", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 13:45:06", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "login_sucesso", "url": "https://tatiminas.a2wplataforma.com.br/a2w/inicio"}
+{"timestamp": "2026-01-21 13:56:54", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 13:57:00", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "erro", "mensagem": "'senha'"}
+{"timestamp": "2026-01-21 13:59:21", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 13:59:25", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "erro", "mensagem": "'senha'"}
+{"timestamp": "2026-01-21 14:07:11", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 14:07:16", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "login_sucesso", "url": "https://tatiminas.a2wplataforma.com.br/a2w/inicio"}
+{"timestamp": "2026-01-21 14:23:15", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_iniciada", "url": "https://tatiminas.a2wplataforma.com.br"}
+{"timestamp": "2026-01-21 14:23:22", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "login_sucesso", "url": "https://tatiminas.a2wplataforma.com.br/a2w/inicio"}
+{"timestamp": "2026-01-21 14:24:21", "empresa": "Tati Minas", "usuario": "tatiminas@atendimentoa2w.com.br", "tipo": "sessao_encerrada", "duracao_segundos": 66}

@@ -1,7 +1,7 @@
 {
   "public": "dist",
   "rewrites": [
-    { "source": "/A2W-Dashboard.html", "destination": "/A2W-Dashboard.html" },
-    { "source": "**", "destination": "/index.html" }
+    { "source": "/dashboard", "destination": "/index.html" },
+    { "source": "/dashboard/**", "destination": "/index.html" }
   ]
 }

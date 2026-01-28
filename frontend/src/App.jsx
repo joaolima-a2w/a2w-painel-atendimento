@@ -74,7 +74,7 @@ function App() {
           <Route path="acesso-rapido" element={<AcessoRapido user={user} />} />
           <Route index element={<Navigate to="/solicitar" replace />} />
           <Route path="solicitar" element={<SolicitarSenha user={user} />} />
-          <Route path="dashboard" element={<iframe src="/A2W-Dashboard.html" style={{ width: '100%', height: 'calc(100vh - 4px)', border: 'none' }} />} />
+          <Route path="dashboard" element={<DashboardA2W />} />
 
           {/* ROTAS ADMIN */}
           <Route

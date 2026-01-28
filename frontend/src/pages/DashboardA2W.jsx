@@ -6,7 +6,7 @@ function DashboardA2W() {
 
   const dashboards = {
     clientes: {
-      titulo: 'Dashboard - Clientes (Power BI)',
+      titulo: 'Dashboard - Clientes',
       tipo: 'powerbi',
       url: '/A2W-Dashboard.html',
     },

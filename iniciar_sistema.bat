@@ -70,7 +70,7 @@ if errorlevel 1 (
 
 REM Servir build em nova janela
 echo Iniciando servidor frontend...
-start "A2W Frontend" cmd /k "npx serve -c serve.json -p 3000"
+start "A2W Frontend" cmd /k "npx serve -c serve.json -l tcp://0.0.0.0:3000"
 
 cd ..
 
@@ -82,7 +82,7 @@ echo  SISTEMA INICIADO COM SUCESSO!
 echo ============================================================
 echo.
 echo  ACESSO LOCAL:
-echo     Frontend: http://localhost:3001
+echo     Frontend: http://localhost:3000
 echo     API:      http://localhost:8000
 echo.
 echo  ACESSO NA REDE:
